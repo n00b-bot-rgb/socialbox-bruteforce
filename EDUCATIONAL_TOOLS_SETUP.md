@@ -85,11 +85,11 @@ Official docs: https://www.wireshark.org/docs/man-pages/tshark.html
 
 Run:
 
+Run it from the repository root:
+
 ```bash
 chmod +x verify_educational_tools.sh
 ./verify_educational_tools.sh
 ```
-
-Run it from the repository root.
 
 Expected result: reports each tool as installed and confirms Scapy Python import (`from scapy.all import IP, ICMP`) using `python3`.
