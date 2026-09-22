@@ -18,10 +18,8 @@ done
 if python3 -c "from scapy.all import IP" >/dev/null 2>&1; then
   echo "[OK] scapy Python module import succeeded"
 elif [ -n "${SUDO_USER:-}" ] && [ "$SUDO_USER" != "root" ] && \
-     SUDO_USER_SITE="$(sudo -H -u "$SUDO_USER" python3 -m site --user-site 2>/dev/null)" && \
-     [ -n "$SUDO_USER_SITE" ] && \
-     PYTHONPATH="$SUDO_USER_SITE${PYTHONPATH:+:$PYTHONPATH}" python3 -c "from scapy.all import IP" >/dev/null 2>&1; then
-  echo "[OK] scapy Python module import succeeded (using sudo invoking user site-packages)"
+     sudo -H -u "$SUDO_USER" python3 -c "from scapy.all import IP" >/dev/null 2>&1; then
+  echo "[OK] scapy Python module import succeeded (using sudo invoking user Python environment)"
 else
   echo "[MISSING] scapy Python module not available"
   MISSING=1
