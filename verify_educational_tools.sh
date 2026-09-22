@@ -14,7 +14,11 @@ for tool in "${TOOLS[@]}"; do
       PYTHON_OK=1
     fi
   else
-    echo "[MISSING] $tool not found"
+    if [ "$tool" = "python3" ]; then
+      echo "[MISSING] python3 not found (Scapy verification will be skipped)"
+    else
+      echo "[MISSING] $tool not found"
+    fi
     MISSING=1
   fi
 done
