@@ -26,8 +26,9 @@ Optional: allow non-root packet capture with Wireshark:
 
 ```bash
 sudo usermod -aG wireshark "$USER"
-newgrp wireshark
 ```
+
+Then log out and log back in so new group membership is applied.
 
 ## 2) Basic Educational Usage
 
