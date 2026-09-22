@@ -20,7 +20,7 @@ for tool in "${TOOLS[@]}"; do
   fi
 done
 
-if "$PYTHON_BIN" -c "from scapy.all import IP" >/dev/null 2>&1; then
+if "$PYTHON_BIN" -c "from scapy.all import IP, ICMP" >/dev/null 2>&1; then
   echo "[OK] scapy Python module import succeeded with $PYTHON_BIN"
 else
   echo "[MISSING] scapy Python module not available for $PYTHON_BIN"
