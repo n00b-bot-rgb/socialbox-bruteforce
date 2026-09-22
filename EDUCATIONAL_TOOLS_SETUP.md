@@ -83,9 +83,7 @@ Official docs: https://www.wireshark.org/docs/man-pages/tshark.html
 
 ## 3) Installation Verification Script
 
-Run:
-
-Run it from the repository root:
+Run this from the repository root:
 
 ```bash
 chmod +x verify_educational_tools.sh
