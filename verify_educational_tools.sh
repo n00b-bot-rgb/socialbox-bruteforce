@@ -3,11 +3,6 @@ set -euo pipefail
 
 TOOLS=("wireshark" "tcpdump" "nmap" "tshark" "python3")
 MISSING=0
-PYTHON_BIN="/usr/bin/python3"
-
-if [ ! -x "$PYTHON_BIN" ]; then
-  PYTHON_BIN="$(command -v python3)"
-fi
 
 echo "Checking educational cybersecurity tool installation..."
 
@@ -20,10 +15,10 @@ for tool in "${TOOLS[@]}"; do
   fi
 done
 
-if "$PYTHON_BIN" -c "from scapy.all import IP, ICMP" >/dev/null 2>&1; then
-  echo "[OK] scapy Python module import succeeded with $PYTHON_BIN"
+if python3 -c "from scapy.all import IP, ICMP" >/dev/null 2>&1; then
+  echo "[OK] scapy Python module import succeeded with python3"
 else
-  echo "[MISSING] scapy Python module not available for $PYTHON_BIN"
+  echo "[MISSING] scapy Python module not available for python3"
   MISSING=1
 fi
 
