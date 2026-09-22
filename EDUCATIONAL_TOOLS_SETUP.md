@@ -86,7 +86,6 @@ Official docs: https://www.wireshark.org/docs/man-pages/tshark.html
 Run this from the repository root:
 
 ```bash
-chmod +x verify_educational_tools.sh
 ./verify_educational_tools.sh
 ```
 
