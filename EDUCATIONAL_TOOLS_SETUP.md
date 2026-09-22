@@ -16,11 +16,8 @@ Use these tools **only** on systems and networks you own or are explicitly autho
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y wireshark tcpdump nmap tshark python3 python3-pip
-python3 -m pip install --user scapy
+sudo apt-get install -y wireshark tcpdump nmap tshark python3 python3-scapy
 ```
-
-If you install Scapy with `--user`, run `verify_educational_tools.sh` as the **same user** (or run with `sudo` from that user account so `SUDO_USER` is available).
 
 Optional: allow non-root packet capture with Wireshark:
 
@@ -90,6 +87,6 @@ Run:
 ./verify_educational_tools.sh
 ```
 
-Run it from the repository root. If Scapy was installed with `--user`, run as that same user (or via `sudo` from that user account).
+Run it from the repository root.
 
 Expected result: reports each tool as installed and confirms Scapy Python import (`from scapy.all import IP`).
