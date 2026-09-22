@@ -4,12 +4,15 @@ set -euo pipefail
 TOOLS=("wireshark" "tcpdump" "nmap" "tshark" "python3")
 MISSING=0
 PYTHON_OK=0
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+GUIDE_PATH="$SCRIPT_DIR/EDUCATIONAL_TOOLS_SETUP.md"
 
 echo "Checking educational cybersecurity tool installation..."
 
 for tool in "${TOOLS[@]}"; do
-  if command -v "$tool" >/dev/null 2>&1; then
-    echo "[OK] $tool found at $(command -v "$tool")"
+  tool_path="$(command -v "$tool" || true)"
+  if [ -n "$tool_path" ]; then
+    echo "[OK] $tool found at $tool_path"
     if [ "$tool" = "python3" ]; then
       PYTHON_OK=1
     fi
@@ -44,5 +47,6 @@ if [ "$MISSING" -eq 0 ]; then
   exit 0
 fi
 
-echo "One or more verification checks failed. See EDUCATIONAL_TOOLS_SETUP.md for installation steps."
+echo "One or more verification checks failed. See the guide below for installation steps."
+echo "Guide: $GUIDE_PATH"
 exit 1
