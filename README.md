@@ -32,7 +32,7 @@ chmod +x install-sb.sh
 * Twitter   : thelinuxchoice
 * SocialBox : Belahsan Ouerghi
 
-# Educational / Defensive Learning Resources
+## Educational / Defensive Learning Resources
 
 For lawful cybersecurity learning in controlled environments, see:
 
