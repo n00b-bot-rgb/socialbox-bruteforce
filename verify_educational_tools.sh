@@ -15,7 +15,8 @@ for tool in "${TOOLS[@]}"; do
   fi
 done
 
-if python3 -c "import scapy" >/dev/null 2>&1; then
+if python3 -c "import scapy" >/dev/null 2>&1 || \
+   PYTHONPATH="$(python3 -m site --user-site)" python3 -c "import scapy" >/dev/null 2>&1; then
   echo "[OK] scapy Python module import succeeded"
 else
   echo "[MISSING] scapy Python module not available"

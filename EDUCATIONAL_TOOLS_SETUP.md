@@ -20,6 +20,8 @@ sudo apt-get install -y wireshark tcpdump nmap tshark python3 python3-pip
 python3 -m pip install --user scapy
 ```
 
+If you install Scapy with `--user`, run `verify_educational_tools.sh` as the **same user**.
+
 Optional: allow non-root packet capture with Wireshark:
 
 ```bash
