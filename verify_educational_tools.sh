@@ -23,7 +23,7 @@ if [ "$PYTHON_OK" -eq 1 ]; then
   if python3 -c "from scapy.all import IP, ICMP; p=IP(dst='127.0.0.1')/ICMP(); print(p.summary())" >/dev/null 2>&1; then
     echo "[OK] scapy Python module usage check succeeded with python3"
   else
-    echo "[MISSING] scapy Python module usage check failed for python3"
+    echo "[FAILED] scapy Python usage validation command failed for python3"
     MISSING=1
   fi
 else
