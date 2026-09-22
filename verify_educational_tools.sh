@@ -26,8 +26,7 @@ done
 if [ "$PYTHON_OK" -eq 1 ]; then
   PYTHON_PATH="$(command -v python3)"
   PYTHON_VERSION="$(python3 --version 2>/dev/null || echo 'python3')"
-  if python3 -c "import scapy" >/dev/null 2>&1 && \
-     python3 -c "from scapy.all import IP, ICMP; p=IP(dst='127.0.0.1')/ICMP(); print(p.summary())" >/dev/null 2>&1; then
+  if python3 -c "from scapy.all import IP, ICMP; p=IP(dst='127.0.0.1')/ICMP(); print(p.summary())" >/dev/null 2>&1; then
     echo "[OK] scapy Python module usage check succeeded with python3"
   else
     echo "[FAILED] scapy import/runtime validation failed for $PYTHON_PATH ($PYTHON_VERSION). Install python3-scapy for this interpreter."
