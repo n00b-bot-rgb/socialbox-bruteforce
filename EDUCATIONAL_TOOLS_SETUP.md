@@ -54,9 +54,11 @@ Official docs: https://www.tcpdump.org/manpages/tcpdump.1.html
 What it does: Maps hosts/services and helps learn network exposure in authorized environments.
 
 ```bash
-nmap -sn 192.168.1.0/24
+nmap -sn <your-lab-subnet>/24
 nmap -sV localhost
 ```
+
+Replace `<your-lab-subnet>` with your authorized lab network range.
 
 Official docs: https://nmap.org/docs.html
 
