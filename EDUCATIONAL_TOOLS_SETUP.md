@@ -64,7 +64,7 @@ Official docs: https://nmap.org/docs.html
 What it does: Python framework to craft, inspect, and analyze packets for protocol learning.
 
 ```bash
-python3 -c "from scapy.all import IP, ICMP; p=IP(dst='127.0.0.1')/ICMP(); print(p.summary())"
+/usr/bin/python3 -c "from scapy.all import IP, ICMP; p=IP(dst='127.0.0.1')/ICMP(); print(p.summary())"
 ```
 
 Official docs: https://scapy.readthedocs.io/
@@ -89,4 +89,4 @@ Run:
 
 Run it from the repository root.
 
-Expected result: reports each tool as installed and confirms Scapy Python import (`from scapy.all import IP`).
+Expected result: reports each tool as installed and confirms Scapy Python import (`from scapy.all import IP`) using `/usr/bin/python3` when available.
