@@ -17,9 +17,6 @@ done
 
 if python3 -c "from scapy.all import IP" >/dev/null 2>&1; then
   echo "[OK] scapy Python module import succeeded"
-elif [ "$EUID" -ne 0 ] && \
-     PYTHONPATH="$(python3 -m site --user-site)${PYTHONPATH:+:$PYTHONPATH}" python3 -c "from scapy.all import IP" >/dev/null 2>&1; then
-  echo "[OK] scapy Python module import succeeded (using current user site-packages)"
 elif [ -n "${SUDO_USER:-}" ] && [ "$SUDO_USER" != "root" ] && \
      SUDO_USER_SITE="$(sudo -H -u "$SUDO_USER" python3 -m site --user-site 2>/dev/null)" && \
      [ -n "$SUDO_USER_SITE" ] && \
