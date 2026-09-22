@@ -86,7 +86,9 @@ Official docs: https://www.wireshark.org/docs/man-pages/tshark.html
 Run:
 
 ```bash
-bash verify_educational_tools.sh
+./verify_educational_tools.sh
 ```
 
-Expected result: reports each tool as installed and confirms Scapy Python import.
+Run it from the repository root. If Scapy was installed with `--user`, run as that same user (or via `sudo` from that user account).
+
+Expected result: reports each tool as installed and confirms Scapy Python import (`from scapy.all import IP`).
