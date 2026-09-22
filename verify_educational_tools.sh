@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TOOLS=("wireshark" "tcpdump" "nmap" "tshark" "scapy" "python3")
+TOOLS=("wireshark" "tcpdump" "nmap" "tshark" "python3")
 MISSING=0
 PYTHON_BIN="/usr/bin/python3"
 
