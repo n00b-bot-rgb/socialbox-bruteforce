@@ -31,3 +31,10 @@ chmod +x install-sb.sh
 * instagram : thelinuxchoice
 * Twitter   : thelinuxchoice
 * SocialBox : Belahsan Ouerghi
+
+## Educational / Defensive Learning Resources
+
+For lawful cybersecurity learning in controlled environments, see:
+
+- `EDUCATIONAL_TOOLS_SETUP.md` (Wireshark, tcpdump, Nmap, Scapy, tshark setup and usage)
+- `verify_educational_tools.sh` (simple installation verification script)
